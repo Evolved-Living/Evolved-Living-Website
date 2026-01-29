@@ -2,223 +2,151 @@
 
 ## Purpose
 
-This file defines **strict, non-negotiable rules** that any code-generation tool (including GitHub Copilot) MUST follow when generating or modifying code for the *Evolved Living* website.
+This document defines the **mandatory generation rules** for the Evolved Living website. These rules ensure Copilot (or any generator) produces a site that is:
 
-The primary goals are:
+* Static-first
+* Fully usable without JavaScript
+* Easy for non-technical users to maintain
+* Structurally consistent and predictable
 
-* Extreme maintainability
-* Clear separation of structure, content, and style
-* Zero technical burden for non-technical editors
-* Compatibility with GitHub Pages (static hosting)
-
-Violations of these rules are considered incorrect output.
+These rules override default assumptions made by code generators.
 
 ---
 
-## 1. Architectural Rules (Hard Requirements)
+## 1. Core Architecture
 
-### 1.1 Static-Only Architecture
+### 1.1 Static-First Requirement
 
-* The site MUST remain fully static.
-* NO server-side rendering.
-* NO frameworks (React, Vue, Svelte, Next.js, Rails, etc.).
-* NO build step (no bundlers, no transpilers).
+The website MUST function as a complete, readable website with JavaScript disabled.
 
-Everything must work when opened directly in a browser or served via GitHub Pages.
+This means:
 
----
+* All pages contain real content in HTML
+* Navigation works with normal links
+* No content depends on JS to appear
 
-### 1.2 Separation of Concerns
-
-The following separation is mandatory:
-
-| Layer | Allowed Responsibility          | Forbidden Responsibility    |
-| ----- | ------------------------------- | --------------------------- |
-| HTML  | Semantic structure only         | Hard-coded business content |
-| JSON  | All editable text & image paths | Layout, styling, logic      |
-| CSS   | Visual styling only             | Content, copy, structure    |
-| JS    | Data loading & DOM binding only | Hard-coded copy, styling    |
+JavaScript is **progressive enhancement only**.
 
 ---
 
-## 2. HTML Rules
+### 1.2 Layer Responsibilities
 
-### 2.1 Page-Level HTML
+| Layer | Responsibility                              |
+| ----- | ------------------------------------------- |
+| HTML  | Structure + visible fallback content        |
+| JSON  | Editable mirror of page content             |
+| CSS   | Styling only                                |
+| JS    | Optional content replacement & enhancements |
 
-Each page HTML file (`index.html`, `services.html`, etc.) MUST:
+HTML is the baseline source users see. JSON is the editing source of truth.
 
-* Contain only:
+---
 
-  * `<head>` metadata
-  * `<link>` to theme stylesheet
-  * `<script>` includes
-  * `data-partial` placeholders
-* NOT contain business copy, phone numbers, addresses, taglines, or descriptions.
+## 2. HTML Generation Rules
 
-Allowed example:
+### 2.1 Pages Must Contain Content
+
+Each HTML page MUST include:
+
+* Semantic structure (`header`, `main`, `section`, `footer`)
+* Real headings and paragraphs
+* Example buttons/links
+
+This fallback content must match the JSON files conceptually.
+
+Example:
 
 ```html
-<div data-partial="header"></div>
-<main class="page">
-  <div data-partial="hero"></div>
-</main>
-<div data-partial="footer"></div>
+<h1 data-content="hero.title">Designed for the Way You Live</h1>
 ```
 
-Forbidden example:
-
-```html
-<h1>Building Homes That Last</h1>
-```
+If JS runs, content may update. If JS fails, this text remains.
 
 ---
 
-### 2.2 Partials
+### 2.2 Partials Usage
 
-All reusable sections MUST be implemented as partials in `/partials/`.
+Partials are allowed for reuse, but **pages must remain valid and readable if partial loading JS fails**.
 
-Rules:
+Therefore:
 
-* One partial = one logical section
-* Filenames must be descriptive and human-readable
-* Partials MUST NOT contain hard-coded copy
-
-Required attributes:
-
-* `data-content="path.to.value"` for single values
-* `data-repeat="path.to.array"` for lists
-* `data-text`, `data-href`, `data-src` inside repeat blocks
+* Partials may be included directly in pages during generation
+* JS-based partial loading must not be required for layout
 
 ---
 
 ## 3. JSON Content Rules
 
-### 3.1 Content Location
-
-All editable content MUST live in `/content/`.
-
-Each file must represent ONE concept:
-
-* `site.json` → company-wide information
-* `hero.json` → homepage hero
-* `services.json` → services list
-* `projects.json` → project listings
-* `contact.json` → contact details
-
----
-
-### 3.2 JSON Simplicity Rules
-
-JSON files MUST:
-
-* Be readable by non-technical users
-* Avoid nesting deeper than 2 levels
-* Use plain language keys
-* Avoid abbreviations and acronyms
-
-Good:
-
-```json
-{
-  "title": "Our Services",
-  "items": [
-    { "title": "Custom Homes", "description": "..." }
-  ]
-}
-```
-
-Bad:
-
-```json
-{ "svc": { "itm": [{ "t": "..." }] } }
-```
+* JSON mirrors the visible HTML content
+* JSON structure must be simple and shallow
+* Keys must align with `data-content` attributes
+* JSON exists to make editing easier, not to render the site
 
 ---
 
 ## 4. JavaScript Rules
 
-### 4.1 JavaScript Scope
+JavaScript must be minimal.
 
-JavaScript is ONLY allowed to:
+Allowed:
 
-* Load partial HTML files
-* Fetch JSON content
-* Bind JSON values into HTML via data attributes
-* Handle theme switching
+* Replace fallback HTML text with JSON values
+* Theme switching
+* Minor UI enhancements
 
-JavaScript MUST NOT:
+Forbidden:
 
-* Contain business copy
-* Generate HTML strings manually
-* Manipulate CSS values directly
+* Rendering full page sections
+* Creating layout from scratch
+* Hiding content until JS loads
 
----
-
-### 4.2 Content Binding Rules
-
-* All content binding MUST be declarative via `data-*` attributes
-* No inline logic tied to specific content
-* Scripts must be generic and reusable
+The site must never appear blank without JS.
 
 ---
 
 ## 5. CSS & Theme Rules
 
-### 5.1 Base + Theme Model
+### 5.1 Theme Naming
 
-* `theme-base.css` defines ALL shared layout and component styles
-* Theme files (e.g. `theme-solar-modern.css`) ONLY define `:root` variables
-* Theme files MUST `@import "theme-base.css"`
+The primary theme MUST be named:
 
-This pattern is mandatory.
+**`theme-main.css`**
 
----
-
-### 5.2 Uniform Application
-
-* All colors MUST come from CSS variables
-* NO hard-coded colors inside layout rules
-* Components must look consistent across all pages
-
-If a color is needed, it must be a variable.
+This file defines brand colors and variables. Avoid stylistic names like "solar".
 
 ---
 
-## 6. Maintainability & Clarity
+### 5.2 Styling Model
 
-### 6.1 Non-Technical Editor Priority
+* `theme-base.css` = layout and components
+* `theme-main.css` = color variables only
+* No hard-coded colors in component rules
 
-Assume the editor:
+---
 
-* Does not know HTML
-* Does not know CSS
-* Does not know JavaScript
+## 6. Maintainability Rules
+
+Assume editors are non-technical.
 
 Therefore:
 
-* Content files must be obvious to locate
-* Filenames must explain their purpose
-* No "magic" or hidden coupling
+* JSON files must be easy to locate and edit
+* File names must be descriptive
+* Avoid clever or abstract patterns
+
+Clarity over elegance.
 
 ---
 
-### 6.2 Naming Conventions
+## 7. Validation Criteria
 
-* Use full words, not abbreviations
-* Avoid cleverness
-* Prefer boring clarity over elegance
+Generated output is correct only if:
 
----
-
-## 7. Company Identity
-
-* Company name: **Evolved Living**
-* Tone: professional, modern, calm, trustworthy
-* Industry: residential construction & home building
-* Design goal: clean, confident, timeless
+* Pages display full content with JS disabled
+* Theme file is named `theme-main.css`
+* JSON mirrors HTML content
+* No frameworks or build tools are used
 
 ---
 
 ## End of Rules
-
-Any generated code must comply with ALL sections above.

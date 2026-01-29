@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 64" width="240" height="64" role="img" aria-label="Evolved Living logo">
+  <rect width="240" height="64" fill="none"></rect>
+  <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 52 L36 20 L60 52 Z" />
+    <path d="M80 52 L104 20 L128 52 Z" />
+  </g>
+  <text x="140" y="42" fill="currentColor" font-family="sans-serif" font-size="22">Evolved Living</text>
+</svg>

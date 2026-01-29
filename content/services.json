@@ -1,23 +1,22 @@
 {
-{
-  "title": "Our Services",
-  "items": [
-    {
-      "title": "Custom Home Building",
-      "description": "We design and build custom homes tailored to your specific needs, preferences, and budget. From initial concept to final walkthrough, we guide you through every step."
+  "services": {
+    "pageTitle": "Services",
+    "pageIntro": "We offer a full range of services for homeowners seeking exceptional design and build quality.",
+    "previewTitle": "Our Services",
+    "previewIntro": "From full custom builds to renovations and sustainability consulting, we guide you through every step.",
+    "service1": {
+      "title": "Custom Homes",
+      "body": "From lot analysis to final finishes, we manage the full custom build process."
     },
-    {
-      "title": "Renovations & Remodeling",
-      "description": "Transform your existing home with expert renovations. Whether it's a kitchen upgrade, bathroom remodel, or full-house transformation, we deliver quality craftsmanship."
+    "service2": {
+      "title": "Renovations",
+      "body": "Complete remodels and sensitive restorations with a focus on durability and function."
     },
-    {
-      "title": "Design Consultation",
-      "description": "Work with our experienced architects and designers to bring your vision to life. We help optimize layouts, select materials, and plan for sustainability."
+    "service3": {
+      "title": "Sustainable Design",
+      "body": "We prioritize efficient envelopes, passive strategies, and durable materials to lower lifetime costs."
     },
-    {
-      "title": "Project Management",
-      "description": "From permits to inspections, we manage all aspects of your construction project. You'll always know the timeline, budget, and quality standards being maintained."
-    }
-  ]
+    "ctaTitle": "Ready to start?",
+    "ctaBody": "Schedule a consultation to discuss your goals and budget."
+  }
 }
-

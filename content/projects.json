@@ -1,4 +1,8 @@
 {
-  "title": "Our Projects",
-  "items": []
+  "projects": {
+    "previewTitle": "Featured Projects",
+    "previewIntro": "Recent homes that show our attention to detail and client collaboration.",
+    "project1": { "caption": "Coastal Modern — 4 bed, 3 bath" },
+    "project2": { "caption": "Mountain Retreat — Passive-solar design" }
+  }
 }

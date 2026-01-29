@@ -2,221 +2,124 @@
 
 ## Project Overview
 
-This repository contains the official website for **Evolved Living**, a residential construction company.
+This is the official website for **Evolved Living**, a residential construction company.
 
-The website must remain:
+The website must:
 
-* Simple
-* Clean
-* Easily editable by non-technical users
-* Visually consistent across all pages
-
-The site is intended to:
-
-1. Advertise contact information
-2. Communicate brand values
-3. Later showcase available homes and projects
+* Work without JavaScript
+* Be clean and modern
+* Be easy for non-technical users to maintain
+* Use JSON for editable content but include fallback HTML
 
 ---
 
 ## Brand Identity
 
-### Company Name
+Company Name: **Evolved Living**
 
-**Evolved Living**
-
-### Brand Attributes
+Brand qualities:
 
 * Modern
+* Calm
+* Professional
 * Trustworthy
-* High-quality craftsmanship
-* Calm and confident
+* High-quality residential construction
 
-### Visual Direction
+---
 
-* Earth-adjacent tones with modern accents
-* example colors(adjust as needed):
-  * Primary: #1a5a1a
-  * Accent: #4F94E0
-  * Background: #d4b896
-  * Border: #c9a889
-  * Surface: #FFFFFF
-  * Text: #333333
-* Clean spacing and generous white space
-* Subtle gradients and soft shadows
+## Visual Direction
+
+* Neutral, nature-adjacent tones
+* Clean white surfaces
+* Subtle shadows
+* Generous spacing
 * No visual clutter
 
----
-
-## Styling Guidance
-
-### Base Stylesheet
-
-`theme-base.css` defines:
-
-* Layout grid
-* Typography scale
-* Spacing system
-* Buttons
-* Cards
-* Forms
-* Header and footer
-
-All components MUST derive from this file.
+The base styling direction comes from the provided base stylesheet, but it should be refined for consistency and accessibility.
 
 ---
 
-### Preferred Theme: Solar Modern
+## Theme System
 
-The client prefers the direction established in:
+### Main Theme Naming
 
-* `theme-base.css`
-* `theme-solar-modern.css`
+The primary theme must be named clearly:
 
-Key characteristics:
+**`theme-main.css`**
 
-* Warm background tones
-* Forest green primary
-* Soft blue accent
-* White surfaces
-* Calm, upscale residential feel
-
-Improvements allowed:
-
-* Slightly increase contrast for accessibility
-* Ensure consistent application across all components
-* Refine hover and focus states
-* Reduce visual noise where possible
+This file defines brand colors and variables.
 
 ---
 
-## Content Structure
+### Styling Structure
 
-### Content Directory
+* `theme-base.css` → layout, components, spacing
+* `theme-main.css` → brand colors via CSS variables
 
-All editable content lives in `/content/`.
-
-Required files:
-
-* `site.json`
-
-  * Company name
-  * Tagline
-  * Phone number
-  * Email
-  * Address
-  * Footer copyright
-
-* `hero.json`
-
-  * Headline
-  * Subheadline
-  * Primary CTA text
-
-* `services.json`
-
-  * Section title
-  * List of services
-
-* `projects.json`
-
-  * Section title
-  * List of projects (can be empty initially)
-
-* `contact.json`
-
-  * Section title
-  * Contact instructions
+No hard-coded colors inside layout rules.
 
 ---
 
-### Editing Expectations
+## Content Strategy
 
-A non-technical user should be able to:
+Content exists in TWO places by design:
 
-* Open a JSON file
-* Change text values
-* Save the file
-* See the update live
+1. **HTML fallback content** (visible without JS)
+2. **JSON content** (editable source of truth)
 
-No HTML or CSS editing should be required for content changes.
+JavaScript replaces HTML fallback with JSON values when enabled.
 
 ---
 
-## Page Structure
+## Required Pages
 
-### Required Pages
-
-* `index.html` – Home
-* `services.html` – Services overview
-* `contact.html` – Contact information
-
-Future pages may include:
-
-* `projects.html`
-* `available-homes.html`
+* Home (`index.html`)
+* Services (`services.html`)
+* Contact (`contact.html`)
 
 ---
 
-### Page Composition
+## Required Sections
 
-Each page should be assembled from partials:
+* Header with navigation
+* Hero section (home)
+* Services section
+* Contact section
+* Footer
 
-* `header.html`
-* `hero.html` (homepage only)
-* `section-services.html`
-* `section-projects.html`
-* `section-contact.html`
-* `footer.html`
-
----
-
-## Interactivity
-
-### Theme Switching
-
-* Multiple theme CSS files may exist
-* A simple theme switcher is allowed
-* Theme selection should persist via `localStorage`
-
-Theme switching must NOT:
-
-* Alter layout
-* Break accessibility
-* Change content
+Each must contain example headings and text.
 
 ---
 
-## Accessibility & Quality
+## Editing Experience
 
-* Semantic HTML elements only
-* Logical heading order
-* Sufficient color contrast
-* Keyboard-accessible buttons and links
+Non-technical users should:
 
----
+* Edit text in JSON files
+* Not need to modify HTML
+* Not need to touch CSS or JS
 
-## Long-Term Vision
-
-The architecture should support:
-
-* Adding new pages without duplication
-* Adding new themes without refactoring
-* Adding listings via JSON only
-
-No architectural decisions should limit these goals.
+Fallback content in HTML ensures the site never breaks visually.
 
 ---
 
-## Summary for Code Generators
+## Accessibility
 
-When in doubt:
+* Proper heading structure
+* Good color contrast
+* Keyboard accessible navigation
 
-* Favor simplicity
-* Favor clarity
-* Favor explicit structure
+---
 
-The best solution is the one a non-technical business owner can maintain confidently.
+## Summary for Code Generation
+
+When generating:
+
+* Include real content in HTML
+* Mirror it in JSON
+* Use minimal JavaScript
+* Name files clearly
+* Prioritize clarity over abstraction
 
 ---
 

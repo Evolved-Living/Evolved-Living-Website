@@ -1,5 +1,7 @@
 {
-  "headline": "Welcome to Evolved Living",
-  "subheadline": "Building homes that stand the test of time",
-  "ctaText": "Explore Our Services"
+  "hero": {
+    "title": "Designed for the Way You Live",
+    "subtitle": "Evolved Living creates beautiful, durable homes that blend modern design with lasting functionality.",
+    "cta": "Explore Our Services"
+  }
 }

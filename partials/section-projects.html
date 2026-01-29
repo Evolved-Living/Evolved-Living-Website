@@ -1,14 +1,17 @@
-<section class="projects-section">
+<section class="section projects-preview">
   <div class="container">
-    <h2 data-content="projects.title"></h2>
-    <div class="grid" data-repeat="projects.items">
-      <div class="card">
-        <h3 data-text="projects.items.*.title"></h3>
-        <p data-text="projects.items.*.description"></p>
-      </div>
+    <h2 data-content="projects.previewTitle">Featured Projects</h2>
+    <p data-content="projects.previewIntro">Recent homes that show our attention to detail and client collaboration.</p>
+    <div class="project-grid">
+      <figure>
+        <img src="assets/images/projects/project-1-placeholder.svg" alt="Coastal modern home">
+        <figcaption data-content="projects.project1.caption">Coastal Modern — 4 bed, 3 bath</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/images/projects/project-2-placeholder.svg" alt="Mountain retreat">
+        <figcaption data-content="projects.project2.caption">Mountain Retreat — Passive-solar design</figcaption>
+      </figure>
     </div>
-    <div style="text-align: center; margin-top: var(--spacing-xl);">
-      <p style="color: var(--color-text-light); font-size: var(--font-size-lg);">Featured projects coming soon.</p>
-    </div>
+    <p><a class="btn-secondary" href="contact.html">Start Your Project</a></p>
   </div>
 </section>

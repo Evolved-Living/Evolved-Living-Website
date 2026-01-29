@@ -1,63 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Our Services - Evolved Living offers custom home building, renovations, design consultation, and project management.">
-    <title>Services - Evolved Living</title>
-    <link rel="stylesheet" href="css/main-theme.css" data-theme>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Evolved Living — Services</title>
+  <link rel="stylesheet" href="css/theme-main.css">
+  <link rel="stylesheet" href="css/theme-base.css">
 </head>
 <body>
-    <div class="page">
-        <header data-partial="header"></header>
-        
-        <main>
-            <section style="padding: var(--spacing-xl) var(--spacing-lg);">
-                <div class="container">
-                    <h1>Our Services</h1>
-                </div>
-            </section>
-            <div data-partial="section-services"></div>
-        </main>
-        
-        <footer data-partial="footer"></footer>
+  <header>
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <img src="assets/icons/logo.svg" alt="Evolved Living logo" width="160">
+      </a>
+      <nav aria-label="Main navigation">
+        <ul class="nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-    
-    <script src="js/include-partials.js"></script>
-    <script src="js/content-loader.js"></script>
-    <script src="js/theme.js"></script>
-</body>
-</html>
+  </header>
 
+  <main>
+    <section class="container">
+      <h1 data-content="services.pageTitle">Services</h1>
+      <p data-content="services.pageIntro">We offer a full range of services for homeowners seeking exceptional design and build quality.</p>
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/theme-base.css">
-    <title>Evolved Living - Services</title>
-</head>
-<body>
-    <!-- Header Partial -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+      <section class="service-list">
+        <article>
+          <h2 data-content="services.service1.title">Custom Homes</h2>
+          <p data-content="services.service1.body">From lot analysis to final finishes, we manage the full custom build process.</p>
+        </article>
+        <article>
+          <h2 data-content="services.service2.title">Renovations</h2>
+          <p data-content="services.service2.body">Complete remodels and sensitive restorations with a focus on durability and function.</p>
+        </article>
+        <article>
+          <h2 data-content="services.service3.title">Sustainable Design</h2>
+          <p data-content="services.service3.body">We prioritize efficient envelopes, passive strategies, and durable materials to lower lifetime costs.</p>
+        </article>
+      </section>
 
-    <!-- Services Section -->
-    <section id="services">
-        <h2>Our Services</h2>
-        <!-- Services will be loaded from JSON -->
+      <aside class="contact-cta">
+        <h3 data-content="services.ctaTitle">Ready to start?</h3>
+        <p data-content="services.ctaBody">Schedule a consultation to discuss your goals and budget.</p>
+        <p><a class="btn-primary" href="contact.html">Contact Us</a></p>
+      </aside>
     </section>
+  </main>
 
-    <!-- Footer Partial -->
-    <footer>
-        <p>&copy; 2026 Evolved Living. All rights reserved.</p>
-    </footer>
+  <footer>
+    <div class="container footer-inner">
+      <p>&copy; 2026 Evolved Living.</p>
+    </div>
+  </footer>
+
+  <script src="js/utils.js"></script>
+  <script src="js/content-loader.js"></script>
+  <script src="js/theme.js"></script>
 </body>
 </html>

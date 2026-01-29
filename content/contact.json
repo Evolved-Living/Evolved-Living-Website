@@ -1,7 +1,13 @@
 {
-  "title": "Get In Touch",
-  "description": "Ready to start your project? Reach out to our team and let's discuss your vision.",
-  "address": "123 Building Street, Construction City, ST 12345",
-  "email": "hello@evolvedliving.com",
-  "phone": "(555) 123-4567"
+  "contact": {
+    "pageTitle": "Contact",
+    "intro": "We'd love to hear about your project. Reach out and we'll get back to you within 2 business days.",
+    "officeTitle": "Office",
+    "address": "123 Timber Lane\nPortland, OR 97201",
+    "email": "info@evolvedliving.example",
+    "phone": "+1 (503) 555-1234",
+    "formTitle": "Get in touch",
+    "briefTitle": "Get in touch",
+    "briefBody": "Tell us about your goals and we'll respond with next steps and availability."
+  }
 }

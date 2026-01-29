@@ -2,13 +2,11 @@
 
 ## Purpose
 
-This document defines the **intended repository layout** for the *Evolved Living* website.
+This document defines the intended repository layout for the Evolved Living website.
 
-This structure is the *target state*, not a rigid filesystem contract. Code-generation tools **may adjust filenames or groupings if necessary**, but they MUST preserve:
+The structure must support a **static-first, JavaScript-optional architecture** and prioritize long-term maintainability.
 
-* The architectural intent
-* The separation of concerns
-* The maintainability goals defined in `CODEGEN_RULES.md`
+Generators may adjust filenames slightly if clarity improves, but they must preserve architectural intent.
 
 ---
 
@@ -37,11 +35,10 @@ This structure is the *target state*, not a rigid filesystem contract. Code-gene
 │
 ├─ css/
 │  ├─ theme-base.css
-│  ├─ theme-solar-modern.css
-│  └─ (additional theme files)
+│  ├─ theme-main.css
+│  └─ (optional additional themes)
 │
 ├─ js/
-│  ├─ include-partials.js
 │  ├─ content-loader.js
 │  ├─ theme.js
 │  └─ utils.js
@@ -61,71 +58,65 @@ This structure is the *target state*, not a rigid filesystem contract. Code-gene
 
 ---
 
-## Directory Responsibilities
+## Structural Principles
 
-### `/partials/`
+### Pages (`/`)
 
-* Contains reusable HTML fragments only
-* No business copy
-* No inline styles
-* Uses `data-*` attributes for content binding
+* Must be fully readable HTML documents
+* Must not rely on JS to assemble layout
 
 ---
 
-### `/content/`
+### Partials (`/partials/`)
 
-* Contains all editable business content
-* JSON files only
-* Files are named after the section they control
-* Intended for non-technical editors
-
----
-
-### `/css/`
-
-* `theme-base.css` contains ALL layout and component rules
-* Theme files ONLY define CSS variables and import the base
-* No duplicated component styling across themes
+* Reusable HTML sections
+* May be included directly during generation
+* Must contain fallback content
 
 ---
 
-### `/js/`
+### Content (`/content/`)
 
-* Small, focused scripts only
-* No framework code
-* No content embedded in JavaScript
-
----
-
-### `/assets/`
-
-* Static images and icons only
-* Paths referenced from JSON files
-* Organized by usage, not by page
+* JSON files for easy editing
+* Mirror HTML content
+* Used by JS to enhance, not render
 
 ---
 
-### `/docs/`
+### CSS (`/css/`)
 
-* Contains documentation for code generation tools
-* Not referenced by runtime code
-* Must be reviewed before any automated generation
+* `theme-base.css` contains all layout and component styles
+* `theme-main.css` defines brand color variables
+* No duplicated component rules across themes
+
+---
+
+### JavaScript (`/js/`)
+
+* Optional enhancements only
+* Must not be required for page content
+
+---
+
+### Assets (`/assets/`)
+
+* Static media only
+* Referenced from HTML or JSON
 
 ---
 
 ## Flexibility Clause
 
-Code-generation tools MAY:
+Generators MAY:
 
-* Rename files slightly for clarity
-* Merge or split partials if logically justified
+* Slightly rename files for clarity
+* Merge small partials if logical
 
-They MUST NOT:
+Generators MUST NOT:
 
-* Eliminate partials
-* Inline content into HTML
-* Replace JSON-driven content with hard-coded copy
-* Introduce build tools or frameworks
+* Remove fallback HTML content
+* Require JS to render content
+* Introduce frameworks or build steps
 
 ---
 
