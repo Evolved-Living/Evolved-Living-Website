@@ -1,0 +1,22 @@
+{
+  "services": {
+    "pageTitle": "Services",
+    "pageIntro": "We offer a full range of services for homeowners seeking exceptional design and build quality.",
+    "previewTitle": "Our Services",
+    "previewIntro": "From full custom builds to renovations and sustainability consulting, we guide you through every step.",
+    "service1": {
+      "title": "Custom Homes",
+      "body": "From lot analysis to final finishes, we manage the full custom build process."
+    },
+    "service2": {
+      "title": "Renovations",
+      "body": "Complete remodels and sensitive restorations with a focus on durability and function."
+    },
+    "service3": {
+      "title": "Sustainable Design",
+      "body": "We prioritize efficient envelopes, passive strategies, and durable materials to lower lifetime costs."
+    },
+    "ctaTitle": "Ready to start?",
+    "ctaBody": "Schedule a consultation to discuss your goals and budget."
+  }
+}

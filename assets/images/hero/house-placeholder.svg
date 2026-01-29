@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="600" height="360" role="img" aria-label="House illustration">
+  <rect width="600" height="360" fill="#f2f4f2"/>
+  <g fill="#dbe6db" stroke="#c2d3c2">
+    <rect x="120" y="140" width="360" height="180" rx="10"/>
+    <polygon points="120,140 300,60 480,140"/>
+  </g>
+</svg>

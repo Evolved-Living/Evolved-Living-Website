@@ -1,0 +1,43 @@
+/* theme-main.css — brand variables and design tokens (required filename) */
+:root {
+  --color-bg: #d4b896;
+  --color-surface: #ffffff;
+  --color-surface-muted: #ede5d7;
+  --color-primary: #1a5a1a; /* dark forest green */
+  --color-primary-soft: #e8f5e8;
+  --color-text: #2a2420;
+  --color-text-soft: #6b6460;
+  --color-border: #c9a889;
+  --color-accent: #4F94E0; /* blue */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* Theme-specific overrides */
+  --bg-gradient: linear-gradient(135deg, #d4b896 0%, #e8dcc8 50%, #f0e6da 100%);
+  --header-bg: rgba(255, 255, 255, 0.95);
+  --brand-gradient: linear-gradient(135deg, #4F94E0 35%, #1a5a1a 65%);
+  --brand-text-color: #ffffff;
+  --button-bg: #4F94E0;
+  --hero-card-bg: linear-gradient(145deg, #ffffff, #fafaf8);
+  --hero-card-border: rgba(79, 148, 224, 0.4);
+  --card-border: rgba(201, 168, 137, 0.35);
+  --placeholder-bg: linear-gradient(135deg, #4F94E0, #1a5a1a);
+  --btn-primary-text: #ffffff;
+  --btn-primary-hover-bg: #3a7fb8;
+  --btn-secondary-bg: #e8f5f8;
+  --form-focus-outline: 2px solid rgba(79, 148, 224, 0.6);
+  --footer-bg: rgba(255, 255, 255, 0.9);
+  /* Shadows use soft tints of the primary color rather than black */
+  --shadow-soft: 0 20px 40px rgba(26, 90, 26, 0.06);
+  --shadow-subtle: 0 1px 3px rgba(26, 90, 26, 0.04);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #0b0f0f;
+    --color-surface: #0f1414;
+    --color-text: #e7efea;
+  }
+}
