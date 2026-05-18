@@ -1,0 +1,18 @@
+{
+  "_comment": "Services grid uses a section title, subtitle, and one or more service cards.",
+  "type": "services-grid",
+  "title": "Our Services",
+  "subtitle": "Brief summary of what clients can expect.",
+  "items": [
+    {
+      "title": "Custom Homes",
+      "description": "High-quality residential construction delivered with care.",
+      "image": "content/assets/services/service-1.jpg"
+    },
+    {
+      "title": "Renovations",
+      "description": "Thoughtful updates for existing homes.",
+      "image": "content/assets/services/service-2.jpg"
+    }
+  ]
+}

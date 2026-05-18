@@ -1,0 +1,19 @@
+{
+  "_comment": "Process block presents sequential steps in an ordered workflow.",
+  "type": "process-block",
+  "title": "Our process",
+  "steps": [
+    {
+      "title": "Consultation",
+      "description": "Understand goals and define the initial direction."
+    },
+    {
+      "title": "Planning",
+      "description": "Align budget, schedule, and design priorities."
+    },
+    {
+      "title": "Construction",
+      "description": "Deliver the project with consistent execution and communication."
+    }
+  ]
+}

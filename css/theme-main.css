@@ -1,43 +1,77 @@
-/* theme-main.css — brand variables and design tokens (required filename) */
 :root {
-  --color-bg: #d4b896;
+  --color-bg: #f6f2ec;
   --color-surface: #ffffff;
+  --color-surface-alt: #faf6f1;
   --color-surface-muted: #ede5d7;
-  --color-primary: #1a5a1a; /* dark forest green */
+  --color-primary: #1a5a1a;
   --color-primary-soft: #e8f5e8;
+  --color-secondary: #4f94e0;
+  --color-secondary-soft: #e4effa;
   --color-text: #2a2420;
-  --color-text-soft: #6b6460;
+  --color-text-muted: #6b6460;
   --color-border: #c9a889;
-  --color-accent: #4F94E0; /* blue */
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
-  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-
-  /* Theme-specific overrides */
-  --bg-gradient: linear-gradient(135deg, #d4b896 0%, #e8dcc8 50%, #f0e6da 100%);
-  --header-bg: rgba(255, 255, 255, 0.95);
-  --brand-gradient: linear-gradient(135deg, #4F94E0 35%, #1a5a1a 65%);
-  --brand-text-color: #ffffff;
-  --button-bg: #4F94E0;
-  --hero-card-bg: linear-gradient(145deg, #ffffff, #fafaf8);
-  --hero-card-border: rgba(79, 148, 224, 0.4);
-  --card-border: rgba(201, 168, 137, 0.35);
-  --placeholder-bg: linear-gradient(135deg, #4F94E0, #1a5a1a);
-  --btn-primary-text: #ffffff;
-  --btn-primary-hover-bg: #3a7fb8;
-  --btn-secondary-bg: #e8f5f8;
-  --form-focus-outline: 2px solid rgba(79, 148, 224, 0.6);
-  --footer-bg: rgba(255, 255, 255, 0.9);
-  /* Shadows use soft tints of the primary color rather than black */
-  --shadow-soft: 0 20px 40px rgba(26, 90, 26, 0.06);
-  --shadow-subtle: 0 1px 3px rgba(26, 90, 26, 0.04);
+  --color-border-strong: rgba(26, 90, 26, 0.15);
+  --color-accent: #b87135;
+  --color-link: var(--color-secondary);
+  --color-link-hover: #376daa;
+  --color-contrast: #ffffff;
+  --color-overlay: rgba(26, 90, 26, 0.06);
+  --font-family-base: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-family-heading: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-size-xs: 0.8125rem;
+  --font-size-sm: 0.9375rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.375rem;
+  --font-size-xxl: 2rem;
+  --font-size-hero: clamp(2.5rem, 5vw, 4.5rem);
+  --line-height-body: 1.75;
+  --line-height-heading: 1.1;
+  --weight-body: 400;
+  --weight-heading: 600;
+  --space-xxs: 0.35rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-xxl: 4.5rem;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+  --transition-fast: 180ms ease;
+  --transition-base: 240ms ease;
+  --shadow-soft: 0 20px 48px rgba(26, 90, 26, 0.08);
+  --shadow-card: 0 18px 40px rgba(26, 90, 26, 0.06);
+  --shadow-inline: 0 1px 2px rgba(26, 90, 26, 0.08);
+  --border-thin: 1px solid rgba(26, 90, 26, 0.12);
+  --border-soft: 1px solid rgba(201, 168, 137, 0.35);
+  --max-content-width: 1240px;
+  --breakpoint-tablet: 48rem;
+  --breakpoint-desktop: 64rem;
+  --breakpoint-widescreen: 80rem;
+  --button-height: 3rem;
+  --button-padding: 0.9rem 1.5rem;
+  --footer-bg: rgba(255, 255, 255, 0.95);
+  --header-bg: rgba(255, 255, 255, 0.96);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg: #0b0f0f;
-    --color-surface: #0f1414;
-    --color-text: #e7efea;
+    --color-bg: #101214;
+    --color-surface: #161b1a;
+    --color-surface-alt: #1f2725;
+    --color-surface-muted: #1b2321;
+    --color-text: #eef3ee;
+    --color-text-muted: #a7b3aa;
+    --color-border: rgba(255, 255, 255, 0.08);
+    --color-accent: #88b9ff;
+    --color-link: #88b9ff;
+    --color-link-hover: #b7d6ff;
+    --shadow-soft: 0 20px 48px rgba(0, 0, 0, 0.35);
+    --shadow-card: 0 18px 40px rgba(0, 0, 0, 0.22);
+    --footer-bg: rgba(21, 29, 27, 0.9);
+    --header-bg: rgba(22, 27, 24, 0.95);
   }
 }

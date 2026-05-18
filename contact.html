@@ -1,68 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Evolved Living — Contact</title>
-  <link rel="stylesheet" href="css/theme-main.css">
-  <link rel="stylesheet" href="css/theme-base.css">
-</head>
-<body>
-  <header>
-    <div class="container header-inner">
-      <a href="index.html" class="brand">
-        <img src="assets/icons/logo.svg" alt="Evolved Living logo" width="160">
-      </a>
-      <nav aria-label="Main navigation">
-        <ul class="nav">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Evolved Living | Contact</title>
+    <link rel="stylesheet" href="css/theme-main.css" />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/utilities.css" />
+    <link rel="stylesheet" href="css/content-blocks.css" />
+  </head>
+  <body data-content-source="content/contact.json">
+    <div id="loading-screen" class="loading-screen">Loading...</div>
 
-  <main>
-    <section class="container">
-      <h1 data-content="contact.pageTitle">Contact</h1>
-      <p data-content="contact.intro">We'd love to hear about your project. Reach out and we'll get back to you within 2 business days.</p>
+    <noscript>
+      <div class="site-wrapper">
+        <p>
+          This website requires JavaScript enabled.
+        </p>
+      </div>
+    </noscript>
 
-      <section class="contact-info">
-        <h2 data-content="contact.officeTitle">Office</h2>
-        <address>
-          <p data-content="contact.address">123 Timber Lane<br>Portland, OR 97201</p>
-          <p>Email: <a href="mailto:info@evolvedliving.example" data-content="contact.email">info@evolvedliving.example</a></p>
-          <p>Phone: <a href="tel:+15035551234" data-content="contact.phone">+1 (503) 555-1234</a></p>
-        </address>
-      </section>
+    <div id="site-root"></div>
 
-      <section class="contact-form">
-        <h2 data-content="contact.formTitle">Get in touch</h2>
-        <form action="#" method="post" aria-label="Contact form">
-          <label for="name">Name</label>
-          <input id="name" name="name" type="text" placeholder="Your full name">
-
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" placeholder="you@example.com">
-
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="6" placeholder="Tell us about your project"></textarea>
-
-          <p><button class="btn-primary" type="submit">Send Message</button></p>
-        </form>
-      </section>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-inner">
-      <p>&copy; 2026 Evolved Living.</p>
-    </div>
-  </footer>
-
-  <script src="js/utils.js"></script>
-  <script src="js/content-loader.js"></script>
-  <script src="js/theme.js"></script>
-</body>
+    <script src="javascript/utilities.js"></script>
+    <script src="javascript/content-renderer.js"></script>
+    <script src="javascript/content-loader.js"></script>
+  </body>
 </html>

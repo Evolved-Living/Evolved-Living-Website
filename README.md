@@ -1,145 +1,84 @@
-# Evolved Living — Static Marketing Website
+# Evolved Living Website
 
-This repository contains a static-first marketing site for Evolved Living. It follows the project's codegen rules: pages are fully usable without JavaScript, and JSON files serve as the editable source of truth.
+A lightweight static website for a residential construction brand. The site uses JSON-driven content blocks, framework-free JavaScript rendering, and clean CSS separation to keep the architecture simple, maintainable, and easy to update.
 
-Quick start (preview locally)
---------------------------------
-From the repository root run a simple static server and open a browser:
+## Purpose
+
+This repository contains a static marketing website for Evolved Living. Pages are built from structured JSON content files, so the site can be updated without editing HTML directly.
+
+## Architecture Overview
+
+- **Static entry pages**: `index.html`, `services.html`, `contact.html`
+- **JSON content**: `content/global.json` plus page JSON files
+- **Rendering pipeline**: `javascript/content-loader.js` loads JSON, then `javascript/content-renderer.js` builds page blocks
+- **CSS architecture**:
+  - `css/theme-main.css` for variables and design tokens
+  - `css/global.css` for site shell and layout
+  - `css/utilities.css` for reusable helper classes
+  - `css/content-blocks.css` for block layouts and responsive behavior
+- **Block library**: reusable page sections such as hero, services grid, split content, image banner, process, testimonial, contact CTA, and footer
+
+## Repository Structure
+
+- `index.html`, `services.html`, `contact.html` — page entry points
+- `content/` — page content and shared global content
+- `css/` — visual theme, layout, utilities, and block styling
+- `javascript/` — loader, renderer, and utilities for DOM construction
+- `docs/templates/` — JSON templates for creating new content blocks
+- `docs/` — architecture guidance and block library specs
+
+## How Pages Are Rendered
+
+1. Each HTML page declares its page JSON source with `body data-content-source="..."`.
+2. `javascript/content-loader.js` loads `content/global.json` and the page-specific JSON file.
+3. `javascript/content-renderer.js` uses an explicit block registry to render each block type.
+4. Rendered blocks are appended into the `#site-root` container.
+5. A loading screen shows while content is fetched.
+
+## Editing Content JSON Files
+
+- Use `content/global.json` for shared navigation, company data, and footer content.
+- Use page JSON files under `content/` for page-specific blocks.
+- Each page file is a `blocks` array of block objects.
+- For syntax and examples, refer to `docs/templates/`.
+- Keep content simple, and avoid embedding HTML or layout logic in JSON.
+
+## Adding a New Content Block
+
+1. Define the block schema in `docs/templates/` to keep it human-readable.
+2. Add a renderer function in `javascript/content-renderer.js` that creates the DOM structure for the new block type.
+3. Register the new renderer in the block registry object in `content-renderer.js`.
+4. Add a block object to a page JSON file with `"type": "your-block-type"` and the expected fields.
+
+## Local Testing
+
+To preview the site locally, run a simple local HTTP server from the repository root. For example:
 
 ```bash
 python -m http.server 8000
-# then open http://localhost:8000
 ```
 
-Project structure
-------------------
-- `index.html`, `services.html`, `contact.html` — fully rendered HTML pages with fallback content.
-- `partials/` — reusable HTML fragments (also included inline in pages to ensure no JS dependency).
-- `content/` — editable JSON files that mirror visible text. Edit these to update content without touching HTML.
-  - `site.json`, `hero.json`, `services.json`, `projects.json`, `contact.json`
-- `css/`
-  - `theme-main.css` — REQUIRED name: contains design tokens and variables. Edit these to change color, radii, shadows, and other theme values.
-  - `theme-base.css` — layout, components, spacing. Uses variables from `theme-main.css`.
-- `js/` — minimal progressive-enhancement scripts.
-  - `content-loader.js` replaces fallback HTML text with values from the JSON files when available. The site never hides content while JS is loading.
-  - `theme.js` provides a small `window.toggleTheme()` helper for runtime testing.
-- `assets/` — images and icons (SVG placeholders included).
+Then open:
 
-Editing content
-----------------
-- Non-technical editors should change the JSON files in `content/`. Keys match `data-content` attributes in the HTML (for example, `hero.title` maps to `data-content="hero.title"`).
-- After editing JSON, reload the page in the browser. With JS enabled the page will reflect JSON values; without JS the fallback HTML remains intact.
-
-Theming and visual tokens
--------------------------
-- To adjust colors, spacing, or radii, edit `css/theme-main.css`. This file defines CSS custom properties used across the site. Important tokens include:
-  - `--bg-gradient` — page background (tan gradient used by default)
-  - `--color-text`, `--color-text-soft` — text colors
-  - `--color-surface`, `--color-surface-muted` — surfaces and form backgrounds
-  - `--color-primary` — brand/accent green
-  - `--button-bg`, `--btn-primary-hover-bg` — button colors
-  - `--radius-sm`, `--radius-md`, `--radius-lg` — border radii
-  - `--shadow-soft`, `--shadow-subtle` — shadows (these use tinted values, not pure black)
-
-Accessibility & progressive enhancement
---------------------------------------
-- Pages are fully accessible without JavaScript. Navigation uses plain links. Headings, landmarks (`header`, `main`, `footer`), and form labels are present.
-- `js/content-loader.js` is intentionally conservative: it only replaces text content and silently fails if JSON can't be loaded.
-
-Development notes
------------------
-- Keep `theme-main.css` and `theme-base.css` separate: `theme-main.css` for tokens, `theme-base.css` for layout.
-- Avoid adding frameworks or build steps — this site is static-first by design.
-
-Next steps / suggestions
-------------------------
-- Replace SVG placeholders in `assets/images/` with production photography sized appropriately.
-- Tune contrast values in `css/theme-main.css` if any areas need stronger accessibility contrast.
-- If you'd like, I can add a small CI check or a GitHub Pages configuration to preview automatically.
-
-Contact
---------
-If you want help tuning visuals or committing these changes, tell me which next step you prefer (commit, README adjustments, or CI preview).
-# Evolved Living Website
-
-A clean, modern, static website for Evolved Living residential construction company.
-
-## Overview
-
-This website is built with **zero frameworks, zero build steps**. It's a static site that works perfectly with GitHub Pages and can be maintained by non-technical users.
-
-## Architecture
-
-### Key Principles
-
-- **Static Only**: No server-side rendering, frameworks, or build tools
-- **Separation of Concerns**: HTML (structure) → JSON (content) → CSS (style) → JS (binding)
-- **Maintainability**: Non-technical users can edit content in JSON files without touching HTML
-- **GitHub Pages Compatible**: Works perfectly when deployed as a static site
-
-## Directory Structure
-
-```
-/
-├── index.html                 # Homepage
-├── services.html              # Services page
-├── contact.html               # Contact page
-├── projects.html              # Projects page
-│
-├── partials/                  # Reusable HTML fragments
-│   ├── header.html
-│   ├── footer.html
-│   ├── hero.html
-│   ├── section-services.html
-│   ├── section-projects.html
-│   └── section-contact.html
-│
-├── content/                   # All editable content (JSON)
-│   ├── site.json              # Company info, contact details
-│   ├── hero.json              # Homepage hero section
-│   ├── services.json          # Services listing
-│   ├── projects.json          # Project listings
-│   └── contact.json           # Contact page info
-│
-├── css/
-│   ├── theme-base.css         # All layout & component styles
-│   ├── theme-solar-modern.css # Color variables & theming
-│   └── main-theme.css         # Legacy theme import
-│
-├── js/
-│   ├── include-partials.js    # Loads HTML partials
-│   ├── content-loader.js      # Binds JSON data to pages
-│   ├── theme.js               # Theme switching
-│   └── utils.js               # Utility functions
-│
-└── docs/
-    ├── CODEGEN_RULES.md       # Code generation rules
-    ├── CODEGEN_DOCS.md        # Project documentation
-    └── REPO_STRUCTURE.md      # Repository structure guide
+```text
+http://localhost:8000
 ```
 
-## How It Works
+This is recommended because the renderer loads JSON files using fetch.
 
-1. **HTML Pages** load partials via `data-partial` attributes
-2. **Partials** use `data-content`, `data-text`, and `data-repeat` attributes
-3. **Content Loader** fetches JSON files and binds data to HTML
-4. **CSS Variables** control all colors and design tokens
-5. **Scripts** run in sequence: partials → content → theme
+## Hosting with GitHub Pages
 
-## Editing Content
+This site is ready for GitHub Pages deployment as a static repository. To host it:
 
-Edit any JSON file in `/content/` and changes appear instantly:
+1. Push the repository to GitHub.
+2. Enable GitHub Pages in repository settings.
+3. Choose the branch containing the root HTML files.
+4. The site will serve the root HTML files directly.
 
-- **site.json** - Company name, email, phone, address
-- **hero.json** - Homepage headline and CTA
-- **services.json** - Services offered
-- **contact.json** - Contact information
-- **projects.json** - Featured projects
+No build step is required.
 
-## Deployment
+## Notes
 
-Push to GitHub and enable Pages in repository settings. Done!
-
-## License
-
-© 2026 Evolved Living. All rights reserved.
+- The site is intentionally framework-free and static.
+- Content is managed in JSON rather than hardcoded HTML.
+- Styling and layout follow the documented CSS architecture.

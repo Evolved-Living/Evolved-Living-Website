@@ -1,98 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Evolved Living — Home</title>
-  <link rel="stylesheet" href="css/theme-main.css">
-  <link rel="stylesheet" href="css/theme-base.css">
-</head>
-<body>
-  <header>
-    <div class="container header-inner">
-      <a href="index.html" class="brand">
-        <img src="assets/icons/logo.svg" alt="Evolved Living logo" width="160">
-      </a>
-      <nav aria-label="Main navigation">
-        <ul class="nav">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Evolved Living | Home</title>
+    <link rel="stylesheet" href="css/theme-main.css" />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/utilities.css" />
+    <link rel="stylesheet" href="css/content-blocks.css" />
+  </head>
+  <body data-content-source="content/index.json">
+    <div id="loading-screen" class="loading-screen">Loading...</div>
 
-  <main>
-    <!-- Hero (fallback content mirrored by content/hero.json) -->
-    <section class="hero">
-      <div class="container">
-        <h1 data-content="hero.title">Designed for the Way You Live</h1>
-        <p data-content="hero.subtitle">Evolved Living creates beautiful, durable homes that blend modern design with lasting functionality.</p>
+    <noscript>
+      <div class="site-wrapper">
         <p>
-          <a class="btn-primary" href="services.html" data-content="hero.cta">Explore Our Services</a>
+          This website requires JavaScript enabled.
         </p>
-        <img src="assets/images/hero/house-placeholder.svg" alt="Modern home illustration" class="hero-image">
       </div>
-    </section>
+    </noscript>
 
-    <!-- Services preview -->
-    <section class="section services-preview">
-      <div class="container">
-        <h2 data-content="services.previewTitle">Our Services</h2>
-        <p data-content="services.previewIntro">From full custom builds to renovations and sustainability consulting, we guide you through every step.</p>
-        <div class="cards">
-          <article class="card">
-            <h3 data-content="services.service1.title">Custom Homes</h3>
-            <p data-content="services.service1.body">Tailored design and build services focusing on quality materials and smart layouts.</p>
-          </article>
-          <article class="card">
-            <h3 data-content="services.service2.title">Renovations</h3>
-            <p data-content="services.service2.body">Thoughtful updates that respect the character of your home while improving livability.</p>
-          </article>
-          <article class="card">
-            <h3 data-content="services.service3.title">Sustainable Design</h3>
-            <p data-content="services.service3.body">Energy-conscious choices and long-term durability for lower lifetime costs.</p>
-          </article>
-        </div>
-        <p><a class="btn-secondary" href="services.html">See All Services</a></p>
-      </div>
-    </section>
+    <div id="site-root"></div>
 
-    <!-- Projects preview -->
-    <section class="section projects-preview">
-      <div class="container">
-        <h2 data-content="projects.previewTitle">Featured Projects</h2>
-        <p data-content="projects.previewIntro">Recent homes that show our attention to detail and client collaboration.</p>
-        <div class="project-grid">
-          <figure>
-            <img src="assets/images/projects/project-1-placeholder.svg" alt="Coastal modern home">
-            <figcaption data-content="projects.project1.caption">Coastal Modern — 4 bed, 3 bath</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/images/projects/project-2-placeholder.svg" alt="Mountain retreat">
-            <figcaption data-content="projects.project2.caption">Mountain Retreat — Passive-solar design</figcaption>
-          </figure>
-        </div>
-        <p><a class="btn-secondary" href="contact.html">Start Your Project</a></p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-inner">
-      <p>&copy; 2026 Evolved Living. All rights reserved.</p>
-      <nav aria-label="Footer">
-        <ul class="footer-nav">
-          <li><a href="privacy.html">Privacy</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </footer>
-
-  <script src="js/utils.js"></script>
-  <script src="js/content-loader.js"></script>
-  <script src="js/theme.js"></script>
-</body>
+    <script src="javascript/utilities.js"></script>
+    <script src="javascript/content-renderer.js"></script>
+    <script src="javascript/content-loader.js"></script>
+  </body>
 </html>

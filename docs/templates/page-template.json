@@ -1,0 +1,32 @@
+{
+  "_comment": "Page template contains an ordered list of reusable content blocks.",
+  "blocks": [
+    {
+      "type": "hero-block",
+      "title": "Primary headline for the page",
+      "subtitle": "Supporting sentence that explains the page purpose.",
+      "buttons": [
+        {
+          "label": "Primary action",
+          "href": "services.html"
+        }
+      ],
+      "image": "content/assets/hero/example.jpg"
+    },
+    {
+      "type": "services-grid",
+      "title": "Featured services",
+      "subtitle": "Brief description of the service area.",
+      "items": [
+        {
+          "title": "Service title",
+          "description": "Short summary of the service.",
+          "image": "content/assets/services/example-service.jpg"
+        }
+      ]
+    },
+    {
+      "type": "footer-block"
+    }
+  ]
+}
