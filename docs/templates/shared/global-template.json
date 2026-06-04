@@ -1,0 +1,52 @@
+{
+  "_comment": "Global data is shared by ALL pages. Defines header branding, navigation menu, and footer content. Edit this file once to update these elements across the entire website.",
+  "company": {
+    "name": "Evolved Living",
+    "tagline": "Custom homes designed for modern living",
+    "address": "123 Main Street, City, State 12345",
+    "phone": "+1 (555) 123-4567",
+    "email": "info@evolvedliving.com"
+  },
+  "homepage": "index.html",
+  "navigation": [
+    {
+      "label": "Home",
+      "href": "index.html"
+    },
+    {
+      "label": "Services",
+      "href": "services.html"
+    },
+    {
+      "label": "Contact",
+      "href": "contact.html"
+    }
+  ],
+  "footer": {
+    "text": "Crafting exceptional residential spaces with thoughtful design and quality construction.",
+    "links": [
+      {
+        "label": "Home",
+        "href": "index.html"
+      },
+      {
+        "label": "Services",
+        "href": "services.html"
+      },
+      {
+        "label": "Contact",
+        "href": "contact.html"
+      }
+    ],
+    "contact": [
+      {
+        "label": "Phone",
+        "href": "tel:+15551234567"
+      },
+      {
+        "label": "Email",
+        "href": "mailto:info@evolvedliving.com"
+      }
+    ]
+  }
+}

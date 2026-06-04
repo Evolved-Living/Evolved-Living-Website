@@ -1,0 +1,17 @@
+{
+  "_comment": "Split content renders two side-by-side regions that stack on mobile.",
+  "type": "split-content",
+  "left": {
+    "title": "Content heading",
+    "text": "A short paragraph describing this section.",
+    "buttons": [
+      {
+        "label": "Learn more",
+        "href": "services.html"
+      }
+    ]
+  },
+  "right": {
+    "image": "content/assets/projects/example-split.jpg"
+  }
+}

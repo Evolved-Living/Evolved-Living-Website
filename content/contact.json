@@ -1,13 +1,71 @@
 {
-  "contact": {
-    "pageTitle": "Contact",
-    "intro": "We'd love to hear about your project. Reach out and we'll get back to you within 2 business days.",
-    "officeTitle": "Office",
-    "address": "123 Timber Lane\nPortland, OR 97201",
-    "email": "info@evolvedliving.example",
-    "phone": "+1 (503) 555-1234",
-    "formTitle": "Get in touch",
-    "briefTitle": "Get in touch",
-    "briefBody": "Tell us about your goals and we'll respond with next steps and availability."
-  }
+  "blocks": [
+    {
+      "type": "hero-block",
+      "title": "Start your next home project with confidence",
+      "subtitle": "Speak with our team to discuss site planning, timelines, and the design-build approach that fits your needs.",
+      "buttons": [
+        {
+          "label": "Request a consultation",
+          "href": "contact.html"
+        }
+      ],
+      "image": "content/assets/contact/contact-hero.jpg"
+    },
+    {
+      "type": "split-content",
+      "left": {
+        "title": "Contact our team",
+        "text": "Email us, call directly, or visit our Denver office. We respond quickly to project inquiries and preconstruction questions.",
+        "buttons": [
+          {
+            "label": "Email us",
+            "href": "mailto:hello@evolvedliving.co"
+          }
+        ]
+      },
+      "right": {
+        "title": "Office details",
+        "text": "Evolved Living\n1225 Meadow Lane\nDenver, CO 80202\n\nPhone: +1 (720) 555-0148\nEmail: hello@evolvedliving.co"
+      }
+    },
+    {
+      "type": "image-banner",
+      "image": "content/assets/contact/contact-office.jpg",
+      "title": "Planning your home should be easy",
+      "subtitle": "We create a structured onboarding experience so residential clients feel supported from the first conversation."
+    },
+    {
+      "type": "process-block",
+      "title": "How to work with us",
+      "steps": [
+        {
+          "title": "Inquiry",
+          "description": "Share your project overview and desired scope so we can learn your priorities."
+        },
+        {
+          "title": "Conversation",
+          "description": "We review your site, budget, and schedule to recommend the right next step."
+        },
+        {
+          "title": "Proposal",
+          "description": "Receive a clear service agreement with defined milestones and deliverables."
+        }
+      ]
+    },
+    {
+      "type": "contact-cta",
+      "title": "Let’s begin your residential construction journey",
+      "text": "Reach out to schedule a discovery call and learn how Evolved Living can deliver your next home project.",
+      "buttons": [
+        {
+          "label": "Send a message",
+          "href": "mailto:hello@evolvedliving.co"
+        }
+      ]
+    },
+    {
+      "type": "footer-block"
+    }
+  ]
 }

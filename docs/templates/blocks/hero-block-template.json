@@ -1,0 +1,17 @@
+{
+  "_comment": "Hero block introduces the page with headline, supporting text, optional buttons, and an optional image.",
+  "type": "hero-block",
+  "title": "Built Around Your Life",
+  "subtitle": "Custom homes designed for modern living.",
+  "buttons": [
+    {
+      "label": "View Services",
+      "href": "services.html"
+    },
+    {
+      "label": "Contact Us",
+      "href": "contact.html"
+    }
+  ],
+  "image": "content/assets/hero/hero-image.jpg"
+}

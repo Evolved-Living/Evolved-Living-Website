@@ -1,0 +1,52 @@
+{
+  "company": {
+    "name": "Evolved Living",
+    "tagline": "Crafting modern homes for contemporary lifestyles",
+    "address": "1225 Meadow Lane, Denver, CO 80202",
+    "phone": "+1 (720) 555-0148",
+    "email": "hello@evolvedliving.co"
+  },
+  "homepage": "index.html",
+  "navigation": [
+    {
+      "label": "Home",
+      "href": "index.html"
+    },
+    {
+      "label": "Services",
+      "href": "services.html"
+    },
+    {
+      "label": "Contact",
+      "href": "contact.html"
+    }
+  ],
+  "footer": {
+    "text": "Evolved Living is a residential construction partner focused on elegant design, resilient build quality, and a smooth client experience.",
+    "links": [
+      {
+        "label": "Home",
+        "href": "index.html"
+      },
+      {
+        "label": "Services",
+        "href": "services.html"
+      },
+      {
+        "label": "Contact",
+        "href": "contact.html"
+      }
+    ],
+    "contact": [
+      {
+        "label": "hello@evolvedliving.co"
+      },
+      {
+        "label": "+1 (720) 555-0148"
+      },
+      {
+        "label": "Denver, CO"
+      }
+    ]
+  }
+}

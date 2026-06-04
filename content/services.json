@@ -1,22 +1,111 @@
 {
-  "services": {
-    "pageTitle": "Services",
-    "pageIntro": "We offer a full range of services for homeowners seeking exceptional design and build quality.",
-    "previewTitle": "Our Services",
-    "previewIntro": "From full custom builds to renovations and sustainability consulting, we guide you through every step.",
-    "service1": {
-      "title": "Custom Homes",
-      "body": "From lot analysis to final finishes, we manage the full custom build process."
+  "blocks": [
+    {
+      "type": "hero-block",
+      "title": "Services for every stage of your home project",
+      "subtitle": "From concept design support to construction delivery, we provide clear service offerings tailored to residential clients.",
+      "buttons": [
+        {
+          "label": "Request a consultation",
+          "href": "contact.html"
+        }
+      ],
+      "image": "content/assets/services/service-hero.jpg"
     },
-    "service2": {
-      "title": "Renovations",
-      "body": "Complete remodels and sensitive restorations with a focus on durability and function."
+    {
+      "type": "services-grid",
+      "title": "What we build for homeowners",
+      "subtitle": "Our core capabilities are organized around thoughtful planning, quality construction, and collaborative execution.",
+      "items": [
+        {
+          "title": "Custom Home Design-Build",
+          "description": "Comprehensive construction services built around the unique needs of your family and property.",
+          "image": "content/assets/services/custom-design-build.jpg"
+        },
+        {
+          "title": "Whole-Home Renovations",
+          "description": "Transform existing spaces with modern finishes, improved flow, and functional upgrades.",
+          "image": "content/assets/services/whole-home-renovation.jpg"
+        },
+        {
+          "title": "Additions & Expansions",
+          "description": "Add comfortable living space, guest suites, or dedicated home offices with structural clarity.",
+          "image": "content/assets/services/additions.jpg"
+        }
+      ]
     },
-    "service3": {
-      "title": "Sustainable Design",
-      "body": "We prioritize efficient envelopes, passive strategies, and durable materials to lower lifetime costs."
+    {
+      "type": "split-content",
+      "left": {
+        "title": "Construction leadership that preserves your schedule",
+        "text": "We organize subcontractors, inspections, and milestone reviews so your build advances with confidence and transparency.",
+        "buttons": [
+          {
+            "label": "Talk to our team",
+            "href": "contact.html"
+          }
+        ]
+      },
+      "right": {
+        "image": "content/assets/services/site-management.jpg"
+      }
     },
-    "ctaTitle": "Ready to start?",
-    "ctaBody": "Schedule a consultation to discuss your goals and budget."
-  }
+    {
+      "type": "image-banner",
+      "image": "content/assets/projects/feature-kitchen.jpg",
+      "title": "Living spaces that feel both refined and welcoming",
+      "subtitle": "We focus on lasting detail in kitchens, primary suites, and open-plan living areas."
+    },
+    {
+      "type": "process-block",
+      "title": "Service delivery in four clear phases",
+      "steps": [
+        {
+          "title": "Discovery",
+          "description": "Project goals, existing conditions, and client priorities are documented before planning begins."
+        },
+        {
+          "title": "Scope & Budget",
+          "description": "We define project scope with realistic budgets and align expectations before construction starts."
+        },
+        {
+          "title": "Site Execution",
+          "description": "Daily coordination and progress review ensure construction moves efficiently on schedule."
+        },
+        {
+          "title": "Quality Review",
+          "description": "Final inspections and finishing checks make sure every detail is complete and client-ready."
+        }
+      ]
+    },
+    {
+      "type": "testimonial-block",
+      "items": [
+        {
+          "quote": "Their service package made budgeting simple and the build process stayed steady from day one.",
+          "name": "James Lee",
+          "project": "Modern family home"
+        },
+        {
+          "quote": "We appreciated the clear communication and the way they managed our renovation timeline.",
+          "name": "Mia Alvarez",
+          "project": "Kitchen and living remodel"
+        }
+      ]
+    },
+    {
+      "type": "contact-cta",
+      "title": "Ready to start your residential project?",
+      "text": "Connect with Evolved Living to learn how we can support your next custom home or renovation build.",
+      "buttons": [
+        {
+          "label": "Schedule a call",
+          "href": "contact.html"
+        }
+      ]
+    },
+    {
+      "type": "footer-block"
+    }
+  ]
 }

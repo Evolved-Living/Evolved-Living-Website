@@ -1,0 +1,16 @@
+{
+  "_comment": "Testimonial block displays one or more client quotes with attribution.",
+  "type": "testimonial-block",
+  "items": [
+    {
+      "quote": "Evolved Living delivered a home that feels refined and functional.",
+      "name": "Sarah Mitchell",
+      "project": "Custom residence"
+    },
+    {
+      "quote": "Their team made every step clear and kept the project on schedule.",
+      "name": "Daniel Kim",
+      "project": "Home renovation"
+    }
+  ]
+}

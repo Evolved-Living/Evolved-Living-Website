@@ -1,0 +1,7 @@
+{
+  "_comment": "Image banner displays a full-width background image with optional overlay text. Commonly used for project showcases, visual dividers, and featured work highlighting.",
+  "type": "image-banner",
+  "image": "content/assets/placeholders/images/projects/example-banner.jpg",
+  "title": "Featured Project Showcase",
+  "subtitle": "Brief description of the featured work or section"
+}

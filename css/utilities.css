@@ -1,0 +1,157 @@
+/* ================================
+   UTILITIES: Reusable helper classes
+   ================================ */
+
+/* Visibility */
+.u-hidden {
+  display: none !important;
+}
+
+.u-visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Text */
+.u-text-center {
+  text-align: center !important;
+}
+
+.u-text-right {
+  text-align: right !important;
+}
+
+.u-text-muted {
+  color: var(--color-text-muted) !important;
+}
+
+.u-uppercase {
+  text-transform: uppercase !important;
+  letter-spacing: 0.12em !important;
+}
+
+/* Spacing: Margin */
+.u-mt-0 {
+  margin-top: 0 !important;
+}
+
+.u-mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.u-mt-sm {
+  margin-top: var(--space-sm) !important;
+}
+
+.u-mb-sm {
+  margin-bottom: var(--space-sm) !important;
+}
+
+.u-mt-md {
+  margin-top: var(--space-md) !important;
+}
+
+.u-mb-md {
+  margin-bottom: var(--space-md) !important;
+}
+
+/* Spacing: Padding */
+.u-px-md {
+  padding-left: var(--space-md) !important;
+  padding-right: var(--space-md) !important;
+}
+
+.u-px-lg {
+  padding-left: var(--space-lg) !important;
+  padding-right: var(--space-lg) !important;
+}
+
+/* Layout: Flexbox */
+.u-flex {
+  display: flex !important;
+}
+
+.u-flex-center {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Layout: Grid */
+.u-grid {
+  display: grid !important;
+}
+
+.u-gap-sm {
+  gap: var(--space-sm) !important;
+}
+
+.u-gap-md {
+  gap: var(--space-md) !important;
+}
+
+/* Sizing */
+.u-width-full {
+  width: 100% !important;
+}
+
+.u-max-width-xxl {
+  max-width: var(--max-content-width) !important;
+}
+
+/* Styling */
+.u-shadow-soft {
+  box-shadow: var(--shadow-soft) !important;
+}
+
+.u-radius-md {
+  border-radius: var(--radius-md) !important;
+}
+
+.u-radius-pill {
+  border-radius: var(--radius-pill) !important;
+}
+
+/* ================================
+   BUTTONS
+   ================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--button-height);
+  padding: var(--button-padding);
+  border: none;
+  border-radius: var(--radius-pill);
+  background: var(--color-secondary);
+  color: var(--color-contrast);
+  font-weight: 600;
+  transition: transform var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  transform: translateY(-1px);
+  background: var(--color-link-hover);
+}
+
+.btn-secondary {
+  background: var(--color-secondary-soft);
+  color: var(--color-primary);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+  background: var(--color-secondary);
+  color: var(--color-contrast);
+}

@@ -1,0 +1,12 @@
+{
+  "_comment": "Contact CTA block encourages visitors to take the next step with a clear headline and action button.",
+  "type": "contact-cta",
+  "title": "Ready to start your project?",
+  "text": "Share your project goals and we will respond with a plan for next steps.",
+  "buttons": [
+    {
+      "label": "Contact us",
+      "href": "contact.html"
+    }
+  ]
+}

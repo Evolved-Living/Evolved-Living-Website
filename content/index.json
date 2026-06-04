@@ -1,0 +1,115 @@
+{
+  "blocks": [
+    {
+      "type": "hero-block",
+      "title": "Your Vision. Expertly Built.",
+      "subtitle": "Evolved Living delivers custom residential construction with thoughtful details, intentional planning, and modern longevity.",
+      "buttons": [
+        {
+          "label": "Explore Services",
+          "href": "services.html"
+        },
+        {
+          "label": "Get In Touch",
+          "href": "contact.html"
+        }
+      ],
+      "image": "content/assets/hero/exterior-hero.jpg"
+    },
+    {
+      "type": "services-grid",
+      "title": "Built for modern residential living",
+      "subtitle": "From custom homes to renovation projects, our process is structured, transparent, and design-forward.",
+      "items": [
+        {
+          "title": "Custom Home Construction",
+          "description": "Turn your plan into a home with quality craftsmanship, practical systems, and a precise delivery approach.",
+          "image": "content/assets/services/custom-home.jpg"
+        },
+        {
+          "title": "Renovations & Additions",
+          "description": "Refresh existing spaces, expand living areas, and preserve character while improving performance.",
+          "image": "content/assets/services/renovation.jpg"
+        },
+        {
+          "title": "Project Management",
+          "description": "A disciplined schedule, clear communication, and reliable coordination from concept through handover.",
+          "image": "content/assets/services/project-management.jpg"
+        }
+      ]
+    },
+    {
+      "type": "split-content",
+      "left": {
+        "title": "Why homeowners choose Evolved Living",
+        "text": "We pair thoughtful design with construction expertise so each home feels intentional, efficient, and enduring.",
+        "buttons": [
+          {
+            "label": "View Our Projects",
+            "href": "services.html"
+          }
+        ]
+      },
+      "right": {
+        "image": "content/assets/projects/interior-livingroom.jpg"
+      }
+    },
+    {
+      "type": "image-banner",
+      "image": "content/assets/projects/exterior-showcase.jpg",
+      "title": "Detailed execution for inspired residences",
+      "subtitle": "Project photography that reflects our focus on scale, material selection, and enduring architecture."
+    },
+    {
+      "type": "process-block",
+      "title": "Our proven construction process",
+      "steps": [
+        {
+          "title": "Consultation",
+          "description": "We begin with your goals, site conditions, and design priorities to build a clear project direction."
+        },
+        {
+          "title": "Preconstruction",
+          "description": "Detailed budgeting, scheduling, and constructability review prepare the project for a seamless start."
+        },
+        {
+          "title": "Building",
+          "description": "We manage subcontractors, inspections, and quality control to deliver a home you can trust."
+        },
+        {
+          "title": "Handover",
+          "description": "Final walkthroughs, orientation, and warranty support ensure confidence when you step into your completed home."
+        }
+      ]
+    },
+    {
+      "type": "testimonial-block",
+      "items": [
+        {
+          "quote": "Evolved Living made the entire build process feel easy. They delivered on schedule and the finished home exceeded our expectations.",
+          "name": "Mark and Lena Harris",
+          "project": "Custom mountain residence"
+        },
+        {
+          "quote": "Their attention to detail and communication kept us informed at every phase. The project felt managed with confidence.",
+          "name": "Katherine Brooks",
+          "project": "Contemporary renovation"
+        }
+      ]
+    },
+    {
+      "type": "contact-cta",
+      "title": "Ready to plan your home?",
+      "text": "Talk with our team about schedule, budget, and how we can bring your vision to life with construction you can rely on.",
+      "buttons": [
+        {
+          "label": "Contact Us",
+          "href": "contact.html"
+        }
+      ]
+    },
+    {
+      "type": "footer-block"
+    }
+  ]
+}

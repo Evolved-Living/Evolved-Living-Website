@@ -1,64 +1,30 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Evolved Living — Services</title>
-  <link rel="stylesheet" href="css/theme-main.css">
-  <link rel="stylesheet" href="css/theme-base.css">
-</head>
-<body>
-  <header>
-    <div class="container header-inner">
-      <a href="index.html" class="brand">
-        <img src="assets/icons/logo.svg" alt="Evolved Living logo" width="160">
-      </a>
-      <nav aria-label="Main navigation">
-        <ul class="nav">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Evolved Living | Services</title>
+    <link rel="stylesheet" href="css/theme-main.css" />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/utilities.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/content-blocks.css" />
+  </head>
+  <body data-content-source="content/services.json">
+    <div id="loading-screen" class="loading-screen">Loading...</div>
 
-  <main>
-    <section class="container">
-      <h1 data-content="services.pageTitle">Services</h1>
-      <p data-content="services.pageIntro">We offer a full range of services for homeowners seeking exceptional design and build quality.</p>
+    <noscript>
+      <div class="site-wrapper">
+        <p>
+          This website requires JavaScript enabled.
+        </p>
+      </div>
+    </noscript>
 
-      <section class="service-list">
-        <article>
-          <h2 data-content="services.service1.title">Custom Homes</h2>
-          <p data-content="services.service1.body">From lot analysis to final finishes, we manage the full custom build process.</p>
-        </article>
-        <article>
-          <h2 data-content="services.service2.title">Renovations</h2>
-          <p data-content="services.service2.body">Complete remodels and sensitive restorations with a focus on durability and function.</p>
-        </article>
-        <article>
-          <h2 data-content="services.service3.title">Sustainable Design</h2>
-          <p data-content="services.service3.body">We prioritize efficient envelopes, passive strategies, and durable materials to lower lifetime costs.</p>
-        </article>
-      </section>
+    <div id="site-root"></div>
 
-      <aside class="contact-cta">
-        <h3 data-content="services.ctaTitle">Ready to start?</h3>
-        <p data-content="services.ctaBody">Schedule a consultation to discuss your goals and budget.</p>
-        <p><a class="btn-primary" href="contact.html">Contact Us</a></p>
-      </aside>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-inner">
-      <p>&copy; 2026 Evolved Living.</p>
-    </div>
-  </footer>
-
-  <script src="js/utils.js"></script>
-  <script src="js/content-loader.js"></script>
-  <script src="js/theme.js"></script>
-</body>
+    <script src="javascript/utilities.js"></script>
+    <script src="javascript/content-renderer.js"></script>
+    <script src="javascript/content-loader.js"></script>
+  </body>
 </html>

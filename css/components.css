@@ -1,0 +1,132 @@
+/* ==============================================
+   COMPONENTS: Shared structural wrappers and reusable content patterns
+   ==============================================
+*/
+
+/* Standard heading wrapper for block titles. */
+.section-heading {
+  margin: 0 0 var(--space-sm);
+  font-family: var(--font-family-heading);
+  line-height: var(--line-height-heading);
+  color: var(--color-primary);
+}
+
+/* Main section title style. */
+.section-title {
+  font-size: var(--font-size-xxl);
+  letter-spacing: -0.03em;
+}
+
+/* Section subtitle style for supporting copy. */
+.section-subtitle {
+  margin: 0;
+  color: var(--color-text-muted);
+  max-width: 60ch;
+}
+
+/* Section paragraph style for general body copy. */
+.section-copy {
+  margin: 0;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
+
+/* Reusable action bar for CTA buttons and links. */
+.section-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+}
+
+/* Generic grid wrapper for section layouts. */
+.section-grid {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+/* Column layout helper for two-column sections. */
+.section-columns {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+/* Generic card wrapper for internal content panels. */
+.section-card {
+  background: var(--color-surface);
+  border: var(--border-soft);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: var(--space-lg);
+}
+
+/* Reusable panel wrapper for boxed content areas. */
+.section-panel {
+  background: var(--color-surface);
+  border: var(--border-soft);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: var(--space-lg);
+}
+
+/* Soft alternate panel surface variation. */
+.section-panel--soft {
+  background: var(--color-surface-alt);
+}
+
+/* Media container for image and visual content. */
+.section-media {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  min-height: 20rem;
+}
+
+.section-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Banner container for full-width image sections. */
+.section-banner {
+  position: relative;
+  min-height: 18rem;
+  background-position: center;
+  background-size: cover;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.section-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(26, 90, 26, 0.12), rgba(26, 90, 26, 0.28));
+}
+
+.section-banner__content {
+  position: absolute;
+  bottom: var(--space-lg);
+  left: var(--space-lg);
+  right: var(--space-lg);
+  color: var(--color-contrast);
+  z-index: 1;
+}
+
+.section-banner__title {
+  margin: 0 0 var(--space-xs);
+  font-size: var(--font-size-xxl);
+}
+
+.section-banner__subtitle {
+  margin: 0;
+  font-size: var(--font-size-md);
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* Helper to keep section content centered on wide screens. */
+.section-inner--wide {
+  padding: 0 var(--space-lg);
+}
