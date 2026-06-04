@@ -3,18 +3,22 @@
   // Each block type is mapped to a dedicated renderer function via the block registry.
   const { createElement, buildButton, buildList } = global.AppUtils;
 
-  function renderSection(blockType, content, extraClass) {
+  function renderSection(blockType, innerClass, sectionClass) {
     const section = createElement('section', {
-      className: `content-block ${blockType}`,
+      className: `content-block ${blockType} ${sectionClass || ''}`.trim(),
     });
 
     const inner = createElement('div', {
-      className: `content-block__inner ${extraClass || ''}`.trim(),
+      className: `content-block__inner ${innerClass || ''}`.trim(),
     });
 
     section.appendChild(inner);
     return { section, inner };
   }
+
+  /* ===============================================
+     HEADER AND STRUCTURE
+     =============================================== */
 
   // Render the global header using shared navigation and company data.
   function renderHeader(globalData) {
@@ -47,19 +51,23 @@
     return header;
   }
 
+  /* ===============================================
+     BLOCK RENDERERS: One per official block type
+     =============================================== */
+
   function renderHeroBlock(block) {
     const { section, inner } = renderSection('hero-block');
-    const grid = createElement('div', { className: 'hero-block__grid' });
-    const copy = createElement('div', { className: 'hero-copy' });
+    const grid = createElement('div', { className: 'hero-block__grid section-grid' });
+    const copy = createElement('div', { className: 'hero-copy section-copy' });
 
     if (block.title) {
-      copy.appendChild(createElement('h1', { className: 'hero-title', text: block.title }));
+      copy.appendChild(createElement('h1', { className: 'hero-title section-heading', text: block.title }));
     }
     if (block.subtitle) {
       copy.appendChild(createElement('p', { text: block.subtitle }));
     }
     if (Array.isArray(block.buttons) && block.buttons.length) {
-      const actions = createElement('div', { className: 'hero-actions' });
+      const actions = createElement('div', { className: 'hero-actions section-actions' });
       block.buttons.forEach(button => actions.appendChild(buildButton(button)));
       copy.appendChild(actions);
     }
@@ -80,17 +88,17 @@
   function renderServicesGrid(block) {
     const { section, inner } = renderSection('services-grid');
     if (block.title) {
-      inner.appendChild(createElement('h2', { className: 'block-title', text: block.title }));
+      inner.appendChild(createElement('h2', { className: 'section-title', text: block.title }));
     }
     if (block.subtitle) {
-      inner.appendChild(createElement('p', { className: 'block-subtitle', text: block.subtitle }));
+      inner.appendChild(createElement('p', { className: 'section-subtitle', text: block.subtitle }));
     }
 
-    const cards = createElement('div', { className: 'services-grid__items' });
+    const cards = createElement('div', { className: 'services-grid__items section-grid' });
     const items = Array.isArray(block.items) ? block.items : [];
 
     items.forEach(item => {
-      const card = createElement('article', { className: 'service-card' });
+      const card = createElement('article', { className: 'service-card section-card' });
       if (item.icon || item.image) {
         const media = createElement('div', { className: 'service-card__media' });
         const img = createElement('img', {
@@ -111,19 +119,19 @@
   }
 
   function renderSplitContent(block) {
-    const { section, inner } = renderSection('split-content');
+    const { section, inner } = renderSection('split-content section-columns');
     const left = createElement('div', { className: 'split-pane' });
     const right = createElement('div', { className: 'split-pane' });
 
     if (block.left) {
       if (block.left.title) {
-        left.appendChild(createElement('h2', { className: 'split-pane__title', text: block.left.title }));
+        left.appendChild(createElement('h2', { className: 'split-pane__title section-heading', text: block.left.title }));
       }
       if (block.left.text) {
         left.appendChild(createElement('p', { className: 'split-pane__text', text: block.left.text }));
       }
       if (Array.isArray(block.left.buttons)) {
-        const actions = createElement('div', { className: 'hero-actions' });
+        const actions = createElement('div', { className: 'section-actions' });
         block.left.buttons.forEach(button => actions.appendChild(buildButton(button)));
         left.appendChild(actions);
       }
@@ -149,13 +157,13 @@
   }
 
   function renderImageBanner(block) {
-    const { section, inner } = renderSection('image-banner');
+    const { section, inner } = renderSection('image-banner section-banner');
     if (block.image) {
       section.style.backgroundImage = `url('${block.image}')`;
     }
     const overlay = createElement('div', { className: 'image-banner__content' });
     if (block.title) {
-      overlay.appendChild(createElement('h2', { className: 'image-banner__title', text: block.title }));
+      overlay.appendChild(createElement('h2', { className: 'image-banner__title section-heading', text: block.title }));
     }
     if (block.subtitle) {
       overlay.appendChild(createElement('p', { className: 'image-banner__subtitle', text: block.subtitle }));
@@ -167,13 +175,13 @@
   function renderProcessBlock(block) {
     const { section, inner } = renderSection('process-block');
     if (block.title) {
-      inner.appendChild(createElement('h2', { className: 'block-title', text: block.title }));
+      inner.appendChild(createElement('h2', { className: 'section-title', text: block.title }));
     }
-    const steps = createElement('div', { className: 'process-block__steps' });
+    const steps = createElement('div', { className: 'process-block__steps section-grid' });
     const items = Array.isArray(block.steps) ? block.steps : [];
 
     items.forEach((step, index) => {
-      const card = createElement('article', { className: 'process-step' });
+      const card = createElement('article', { className: 'process-step section-card' });
       card.appendChild(createElement('div', { className: 'process-step__index', text: String(index + 1) }));
       if (step.title) {
         card.appendChild(createElement('h3', { className: 'process-step__title', text: step.title }));
@@ -191,13 +199,13 @@
   function renderTestimonialBlock(block) {
     const { section, inner } = renderSection('testimonial-block');
     if (block.title) {
-      inner.appendChild(createElement('h2', { className: 'block-title', text: block.title }));
+      inner.appendChild(createElement('h2', { className: 'section-title', text: block.title }));
     }
-    const items = createElement('div', { className: 'testimonial-block__items' });
+    const items = createElement('div', { className: 'testimonial-block__items section-grid' });
     const testimonials = Array.isArray(block.items) ? block.items : [];
 
     testimonials.forEach(item => {
-      const card = createElement('article', { className: 'testimonial-card' });
+      const card = createElement('article', { className: 'testimonial-card section-card' });
       if (item.quote) {
         card.appendChild(createElement('p', { className: 'testimonial-quote', text: item.quote }));
       }
@@ -213,9 +221,9 @@
   }
 
   function renderContactCta(block) {
-    const { section, inner } = renderSection('contact-cta');
+    const { section, inner } = renderSection('contact-cta', 'section-panel');
     if (block.title) {
-      inner.appendChild(createElement('h2', { className: 'contact-cta__title', text: block.title }));
+      inner.appendChild(createElement('h2', { className: 'contact-cta__title section-heading', text: block.title }));
     }
     if (block.text) {
       inner.appendChild(createElement('p', { className: 'contact-cta__text', text: block.text }));
@@ -229,7 +237,7 @@
   }
 
   function renderFooterBlock(block, globalData) {
-    const { section, inner } = renderSection('footer-block footer-block__inner', 'footer-block__inner');
+    const { section, inner } = renderSection('footer-block', 'footer-block__inner');
     const companyName = globalData.company?.name || 'Evolved Living';
     const footerLinks = Array.isArray(globalData.footer?.links) ? globalData.footer.links : [];
     const contactItems = Array.isArray(globalData.footer?.contact) ? globalData.footer.contact : [];
@@ -265,6 +273,10 @@
     return section;
   }
 
+  /* ===============================================
+     BLOCK REGISTRY AND RENDERING
+     =============================================== */
+
   // Explicit registry mapping block type strings to renderer functions.
   // This supports predictable block rendering without runtime discovery.
   const blockRegistry = {
@@ -296,6 +308,10 @@
 
     return renderer(block, globalData);
   }
+
+  /* ===============================================
+     PAGE RENDERING
+     =============================================== */
 
   // Render the complete page by first inserting global header content,
   // then rendering page-specific blocks in order into the main wrapper.

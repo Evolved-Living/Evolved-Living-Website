@@ -1,3 +1,7 @@
+/* ================================
+   GLOBAL: Reset, Base, and Shell
+   ================================ */
+
 :root {
   font-family: var(--font-family-base);
   color: var(--color-text);
@@ -49,6 +53,10 @@ a:focus-visible {
   color: var(--color-link-hover);
 }
 
+/* ==============================
+   PAGE STRUCTURE
+   ============================== */
+
 #site-root {
   position: relative;
 }
@@ -64,12 +72,22 @@ a:focus-visible {
   padding: 0 var(--space-md);
 }
 
+.main-content {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ==============================
+   HEADER
+   ============================== */
+
 .site-header {
   position: sticky;
   top: 0;
   z-index: 50;
   width: 100%;
   background: var(--header-bg);
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   border-bottom: var(--border-thin);
 }
@@ -90,6 +108,7 @@ a:focus-visible {
   color: var(--color-primary);
 }
 
+/* Navigation */
 .nav-list {
   display: flex;
   flex-wrap: wrap;
@@ -114,6 +133,10 @@ a:focus-visible {
 .nav-link:focus-visible {
   color: var(--color-primary);
 }
+
+/* ==============================
+   LOADING SCREEN
+   ============================== */
 
 .loading-screen {
   position: fixed;
@@ -146,10 +169,9 @@ a:focus-visible {
   }
 }
 
-.main-content {
-  position: relative;
-  overflow: hidden;
-}
+/* ==============================
+   FOOTER
+   ============================== */
 
 .site-footer {
   background: var(--footer-bg);
@@ -178,10 +200,9 @@ a:focus-visible {
   padding: 0;
 }
 
-.footer-note {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-muted);
-}
+/* ==============================
+   RESPONSIVE
+   ============================== */
 
 @media (min-width: var(--breakpoint-tablet)) {
   .site-wrapper {

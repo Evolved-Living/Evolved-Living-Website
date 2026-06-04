@@ -317,6 +317,20 @@ Contains:
 - Global page wrappers
 - Site-wide structural elements
 
+`components.css`
+
+Contains:
+- Reusable component wrappers
+- Panel and card patterns
+- Media containers
+- Shared section helpers
+- Grid and action helpers
+
+Must NOT contain:
+- Theme variables
+- Page-specific block layouts
+- Low-level utility classes
+
 `content-blocks.css`
 
 Contains:

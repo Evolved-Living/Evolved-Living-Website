@@ -15,7 +15,8 @@ This repository contains a static marketing website for Evolved Living. Pages ar
   - `css/theme-main.css` for variables and design tokens
   - `css/global.css` for site shell and layout
   - `css/utilities.css` for reusable helper classes
-  - `css/content-blocks.css` for block layouts and responsive behavior
+  - `css/components.css` for reusable component wrappers and panel patterns
+  - `css/content-blocks.css` as the page block compile layer that assembles components into final block layouts
 - **Block library**: reusable page sections such as hero, services grid, split content, image banner, process, testimonial, contact CTA, and footer
 
 ## Repository Structure

@@ -467,7 +467,8 @@ All blocks must:
 - Use shared spacing scales
 - Use shared typography rules
 - Use CSS variables from `theme-main.css`
-- Use layouts from `content-blocks.css`
+- Use shared structural components from `components.css`
+- Use block composition rules from `content-blocks.css`
 
 Avoid:
 - Inline styles

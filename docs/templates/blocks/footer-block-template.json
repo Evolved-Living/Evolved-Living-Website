@@ -1,0 +1,4 @@
+{
+  "_comment": "Footer block renders company information, links, and contact details from global.json. The block itself requires no additional properties—all content comes from the global data file. Footer appears at the end of every page.",
+  "type": "footer-block"
+}
